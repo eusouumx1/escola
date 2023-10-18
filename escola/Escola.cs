@@ -104,67 +104,20 @@ namespace escola
         }
 
         public void CadastroCursoAluno()
-        {
-            
-            foreach (var aluno in Alunos)
-            {
-                if (BuscaAluno() == 0)
-                {
-                    foreach (var curso in Cursos)
-                    {
-                        if (BuscaCurso() == 0)
-                        {
-                            curso.AlunosCadastrados.Add(aluno);
-                            aluno.CursosCadastrados.Add(curso);
-                            Console.WriteLine("Aluno cadastrado no curso com sucesso");
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Curso invalido");
-                        }
-                        
-                    }
-                   
-                }
-                else 
-                {
-                    Console.WriteLine("Aluno invalido");
-                }
-                
-            }
-        }
+     {
+     Console.Clear();
+     Alunos[BuscaAluno()].CursosCadastrados.Add(Cursos[BuscaCurso()]);
+     Console.WriteLine("Aluno cadastrado no curso com Sucesso");
+    
+     }
         public void CadastroDisciplinaProf()
-        {
-            Console.Clear();
-            
-            foreach (var professor in Professores)
-            {
-                if (BuscaProfessor() == 0)
-                {
-                    foreach (var disciplina in Disciplinas)
-                    {           
-                          if(BuscaDisciplina() == 0)
-                        {
-                            professor.Disciplinas.Add(disciplina);
-                            Console.WriteLine("Sucesso");
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Disciplina inválida");
-                        }
-                        
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Professor inválido");
-                }
-               
-            }
-            
-        }
+{
+    Console.Clear();
+
+    Professores[BuscaProfessor()].Disciplinas.Add(Disciplinas[BuscaDisciplina()]);
+    Console.WriteLine("Disciplina Cadastrada ao professor com sucesso");
+    
+}
         public void PrintAluno()
         {
             Console.Clear();
